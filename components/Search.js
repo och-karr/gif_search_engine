@@ -9,11 +9,10 @@ Search = React.createClass({
     handleChange: function(event) {
         var searchingText = event.target.value; //wartość zdarzenia otrzymujemy
         //wchodząc kolejno do kluczy : target->value 
-        //target ??
         //value -> z inputa
         this.setState({searchingText: searchingText}) //aktualizujemy stan mając wartość z wyżej
         if (searchingText.length > 2) { //warunek, który sprawdza czy wpisywany tekst ma więcej niż 2 litery
-            this.props.onSearch(searchingText);
+            this.props.onSearch(searchingText); //wyszukiwanie gifa po spełnieniu warunku
         }
     },
 
@@ -34,13 +33,12 @@ Search = React.createClass({
         return <input
             type="text"
             onChange={this.handleChange}
-            //onChange - wartość stanu (?)
+            //onChange - obserwuje zmiany zachodzące w input
             onKeyUp={this.handleKeyUp} //nasłuchiwanie na odkliknięcie
             placeholder="Tutaj wpisz wyszukiwaną frazę"
             style={styles}
-            value={this.state.searchTerm} //searchTerm ???
-            //value - trzyma wartość stanu a nie tego co wwpisał
-            //użytkownik!
+            value={this.state.searchTerm} //searchTerm ??? zmienia się w zależności od tego co wpiszemy
+            //value - trzyma wartość stanu a nie tego co wpisał użytkownik!
         />
     }
 });

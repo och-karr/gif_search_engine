@@ -5,11 +5,11 @@ var styles = {
 };
 
 Gif = React.createClass({
-    getUrl: function() {
+    getUrl: function() { //adres strony z gifem
         return this.props.sourceUrl || GIPHY_LOADING_URL;
     },
     render: function() {
-        var url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;
+        var url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;  //adres samego obrazka
         //url jest ustawiane na GIPHY_LOADING_URL gdy this.props.loading===true
         //gdy this.props.loading===false - ustawiany jest this.props.url
 
